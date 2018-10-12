@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        .form-group {
+            margin-left: 70px;
+        }
+        h1 {
+            padding-top: 30px;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        body, html {
+            height: 100%;
+            }
+            .bg {
+            background-image: url("https://ak9.picdn.net/shutterstock/videos/5884559/thumb/1.jpg");
+
+            height: 100%;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="bg">
+    <h1> Register </h1>
+    @model User
+    <form asp-action="RegisterInfo" asp-controller="Home" method="POST">
+        <div class="form-group col-sm-5">
+            <label asp-for="FirstName">First Name</label>
+            <input type="text" class="form-control" asp-for="FirstName">
+            <span asp-validation-for="FirstName"></span>
+        </div>
+
+        <div class="form-group col-sm-5">
+            <label asp-for="LastName">Last Name</label>
+            <input type="text" class="form-control" asp-for="LastName">
+            <span asp-validation-for="LastName"></span>
+        </div>
+
+        <div class="form-group col-sm-5">
+            <label asp-for="Email">Email Address</label>
+            <input type="email" class="form-control" asp-for="Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div class="form-group col-sm-5">
+            <label asp-for="Password">Password</label>
+            <input type="password" class="form-control" asp-for="Password">
+            <span asp-validation-for="Password"></span>
+        </div>
+
+        <div class="form-group col-sm-5">
+            <label asp-for="Confirm">Confirm password</label>
+            <input type="password" class="form-control" asp-for="Confirm">
+            <span asp-validation-for="Confirm"></span>
+            <br>
+            <button type="submit" class="btn btn-dark btn-sm">Submit</button>
+            <a href="login"><button type="button" class="btn btn-link float-right">Already registered?</button></a>
+        </div>
+    </form>
+</div>
+        
+        
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

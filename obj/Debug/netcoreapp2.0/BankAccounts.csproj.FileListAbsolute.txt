@@ -1,0 +1,10 @@
+/Users/stephaniekwon/Desktop/C#/BankAccounts/bin/Debug/netcoreapp2.0/BankAccounts.deps.json
+/Users/stephaniekwon/Desktop/C#/BankAccounts/bin/Debug/netcoreapp2.0/BankAccounts.runtimeconfig.json
+/Users/stephaniekwon/Desktop/C#/BankAccounts/bin/Debug/netcoreapp2.0/BankAccounts.runtimeconfig.dev.json
+/Users/stephaniekwon/Desktop/C#/BankAccounts/bin/Debug/netcoreapp2.0/BankAccounts.dll
+/Users/stephaniekwon/Desktop/C#/BankAccounts/bin/Debug/netcoreapp2.0/BankAccounts.pdb
+/Users/stephaniekwon/Desktop/C#/BankAccounts/obj/Debug/netcoreapp2.0/BankAccounts.csproj.CoreCompileInputs.cache
+/Users/stephaniekwon/Desktop/C#/BankAccounts/obj/Debug/netcoreapp2.0/BankAccounts.AssemblyInfoInputs.cache
+/Users/stephaniekwon/Desktop/C#/BankAccounts/obj/Debug/netcoreapp2.0/BankAccounts.AssemblyInfo.cs
+/Users/stephaniekwon/Desktop/C#/BankAccounts/obj/Debug/netcoreapp2.0/BankAccounts.dll
+/Users/stephaniekwon/Desktop/C#/BankAccounts/obj/Debug/netcoreapp2.0/BankAccounts.pdb

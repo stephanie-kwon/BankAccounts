@@ -1,0 +1,95 @@
+@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Account Page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        .balancebox {
+            height: 30px;
+            width: 150px;
+            border: 3px black solid;
+        }
+        .navbar {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .button  {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+
+        }
+        .table {
+            text-align: center;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-text">
+        <h3>Welcome, @Context.Session.GetString("Name") </h3>
+    </span>
+    
+    <div class="balancetext">
+        <span> Current Balance:</span>
+            <div class="balancebox">
+                   <p>$@ViewBag.Balance</p>
+            </div>
+    </div>
+</nav>
+
+<div class="bg">
+<div class="container">
+
+@model Transaction
+<form asp-action="ProcessAccount" asp-controller="Home" method="POST" class="form-inline">
+    <h5>Deposit/Withdraw: </h5>
+    <div class="form-row align-items-center">
+        <label class="sr-only" asp-for="Amount" for="inlineFormInputName2"></label>
+        <input asp-for="Amount" id="inlineFormInputName2" class="form-control mb-2 mr-sm-2" type="number" step="0.01">
+        <button type="submit" class="btn btn-outline-secondary mb-2 btn-sm">Submit</button>
+        <span asp-validation-for="Amount">@TempData["ErrorMsg"]</span>
+    </div>
+</form>
+<br>
+
+<table class="table table-striped col-sm-10 mx-auto table-hover">
+    <thead> 
+        <tr>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>    
+    <tbody>
+        
+        @foreach(Transaction user_transaction in @ViewBag.Acct)
+        {
+        <tr>
+            <td>@user_transaction.Amount  </td>
+            <td>@user_transaction.Created_at</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<div class="button">
+   <a href="/logout"><button type="button" class="btn btn-link float-left">LogOut</button></a>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        h1 {
+            padding: 30px;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+        .form-group {
+            margin-left: 70px;
+        }
+
+        body, html {
+        height: 100%;
+        }
+        .bg {
+        background-image: url("https://ak9.picdn.net/shutterstock/videos/5884559/thumb/1.jpg");
+        height: 100%;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="bg">
+    <h1>Login</h1>
+
+    @model LoginUser
+    <form asp-action="loginuser" asp-controller="Home" method="POST">
+        <div class="form-group col-sm-5">
+            <label asp-for="Email">Email address</label>
+            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group col-sm-5">
+            <label asp-for="Password">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" asp-for="Password">
+            <span asp-validation-for="Password"></span>
+            <br>
+            
+            <button type="submit" class="btn btn-dark btn-sm">Submit</button>
+            <a href="/"><button type="button" class="btn btn-link float-right">Need to register?</button></a>
+        </div>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
